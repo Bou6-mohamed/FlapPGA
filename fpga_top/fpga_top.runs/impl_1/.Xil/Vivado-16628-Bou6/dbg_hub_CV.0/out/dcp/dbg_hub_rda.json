@@ -1,0 +1,30 @@
+{
+    "Report Information": {
+        "Copyright": "Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.",
+        "Tool Version": "Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025",
+        "Date": "Fri Jan 16 23:46:54 2026",
+        "Host": "Bou6 running 64-bit major release  (build 9200)",
+        "Command": "report_design_analysis -disable_dataflow_error -qor_summary -disable_device_warning -json c:/uottahack/uOttaHack_FPGA/fpga_top/fpga_top.runs/impl_1/.Xil/Vivado-44192-Bou6/dc_drv.0/dc/prj_ip.runs/dbg_hub_synth_1/.Xil/Vivado-50328-Bou6/dcp0/dbg_hub_rda.json",
+        "Design": "dbg_hub",
+        "Device": "xczu5ev",
+        "Design State": "Synthesized"
+    },
+    "Design QoR Summary": [{
+            "Task Name": "synth_design",
+            "Options": "-define default::[not_specified] -vhdl_define default::[not_specified] -incremental_mode off",
+            "Directives": "",
+            "Runtime(mins)": "2",
+            "WNS(ns)": "",
+            "TNS(ns)": "",
+            "WHS(ns)": "",
+            "THS(ns)": "",
+            "RQA": "",
+            "Global Cong Level N-E-S-W": "",
+            "Global Cong Tile% N-E-S-W": "",
+            "Long Cong Level N-E-S-W": "",
+            "Long Cong Tile% N-E-S-W": "",
+            "Short Cong Level N-E-S-W": "",
+            "Short Cong Tile% N-E-S-W": "",
+            "Number of threads": "2"
+        }]
+}
