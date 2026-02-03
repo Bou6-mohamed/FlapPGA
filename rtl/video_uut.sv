@@ -3,28 +3,7 @@ FILENAME     :  video_uut.sv
 PROJECT      :  Hack-a-Thon 2026
 ****************************************************************************/
 
-/*---------------------------------------------------------------------------*/
-//------------------------------------------------------------------------------
-// Notes:
-// - Assumes dvh_sync_i = {D_sync, Vsync, Hsync} per the comment in the repo.
-// - Uses vh_blank_i = {Vblank, Hblank}. Active video when both are 0.
-// - Keeps the same 1-cycle latency as the original (registers RGB + dvh_sync).
-// - This version draws MULTIPLE "Flappy Bird" style pipe obstacles.
-//   Each obstacle is two rectangles (top+bottom) with a vertical gap.
-// - Pipes move horizontally (to the left) and wrap INDIVIDUALLY.
-//   Wrap placement uses (current rightmost pipe) + PIPE_SPACING to avoid
-//   clustering and blank gaps.
-// - Motion updates once per frame (on vsync rising edge) to avoid tearing.
-// - Speed/geometry can be adjusted with localparams below.
-// - CHANGE (for Vivado + randomization):
-//   * gap_y[] is now REGISTERED state (initialized in reset, updated on wrap)
-//   * LFSR added to randomize gap_y[] on wrap (no expensive modulo)
-//   * Wrap logic fixed to avoid stacking if multiple pipes wrap in same frame
-//------------------------------------------------------------------------------
 
-// IMPORTANT:
-// This code intentionally uses 4-state synthesizable types (logic/integer)
-// to keep Vivado synthesis happy.
 
 module video_uut (
     input  wire         clk_i           ,// clock
